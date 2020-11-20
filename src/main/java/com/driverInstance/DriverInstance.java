@@ -110,6 +110,8 @@ public class DriverInstance extends Drivertools {
 //			options.addArguments("--start-maximized");
 //			options.addArguments("--window-size=1616, 876");
 			options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+			options.addArguments("user-agent=\"Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)\"");
+			new ChromeDriver(options);
 			tlWebDriver.set(new ChromeDriver(options));
 //			WebDriverEventListener popupListener = new PopUpListener();
 //			tlWebDriver.set(new EventFiringWebDriver(new ChromeDriver(options)).register(popupListener));
