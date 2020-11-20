@@ -39,6 +39,9 @@ import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.ElementOption;
 import io.appium.java_client.touch.offset.PointOption;
+import com.jayway.restassured.response.Response;
+
+import static com.jayway.restassured.RestAssured.given;
 
 public class Utilities extends ExtentReporter {
 
@@ -110,6 +113,12 @@ public class Utilities extends ExtentReporter {
 	public static JavascriptExecutor js;
 
 	public void initDriver() {
+		System.out.println(getPlatform());
+		Response regionResponse=given().urlEncodingEnabled(false).when().get("http://xtra.zee5.com/country");
+		String region =regionResponse.getBody().jsonPath().getString("country");
+		System.out.println("country : "+region +" "+regionResponse.print());
+		System.out.println("Title :"+getWebDriver().getTitle());
+		System.out.println("URL :"+getWebDriver().getCurrentUrl());
 		if (getPlatform().equals("Web")) {
 			wait = new WebDriverWait(getWebDriver(), getTimeout());
 			js = (JavascriptExecutor) getWebDriver();
@@ -169,7 +178,7 @@ public class Utilities extends ExtentReporter {
 	/**
 	 * wait until element is displayed.
 	 *
-	 * @param webElement the by locator
+	// * @param webElement the by locator
 	 * @return true, if successful
 	 */
 	public static boolean waitForElementDisplayed(By byLocator, int iTimeOut) {
@@ -609,7 +618,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 	/**
-	 * @param i
+	// * @param i
 	 * @param byLocator
 	 * @returns the By locator
 	 */
@@ -662,9 +671,9 @@ public class Utilities extends ExtentReporter {
 	 * Finding the duplicate elements in the list
 	 * 
 	 * @param mono
-	 * @param content
-	 * @param dosechang
-	 * @param enteral
+	// * @param content
+	// * @param dosechang
+	// * @param enteral
 	 */
 	public List<String> findDuplicateElements(List<String> mono) {
 
@@ -708,7 +717,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 	/**
-	 * @param i
+	// * @param i
 	 * @param byLocator
 	 */
 	public void iteratorClick(int temp, By byLocator) {
@@ -744,7 +753,7 @@ public class Utilities extends ExtentReporter {
 	}
 
 	/**
-	 * @param sorted
+	// * @param sorted
 	 * @return true if the list is sorted
 	 * @return false if the list is not sorted
 	 */
