@@ -36,14 +36,13 @@
 		<m2e.disableTestClasspathFlag>true</m2e.disableTestClasspathFlag>
 	</properties>
 
-
 	<dependencies>
-		<dependency>
+	<!--	<dependency>
 			<groupId>io.appium</groupId>
 			<artifactId>java-client</artifactId>
 			<version>7.2.0</version>
 		</dependency>
-
+-->
 		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
 
 		<dependency>
@@ -149,13 +148,13 @@
 			<artifactId>javax.mail-api</artifactId>
 			<version>1.5.5</version>
 		</dependency>
-
+<!--
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpcore</artifactId>
 			<version>4.4.11</version>
 		</dependency>
-
+-->
 		<dependency>
 			<groupId>org.apache.axis</groupId>
 			<artifactId>axis</artifactId>
@@ -244,7 +243,7 @@
 					<suiteXmlFiles>
 						<!-- TestNG suite XML files -->
 						<!-- <suiteXmlFile>${rp.launch}.xml</suiteXmlFile> -->
-						<suiteXmlFile>pwaSanityWeb.xml</suiteXmlFile>
+						<suiteXmlFile>pwaSmokeWeb.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
